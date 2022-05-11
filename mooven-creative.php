@@ -50,8 +50,8 @@ require_once(plugin_dir_path(MOOVEN_PLUGIN_FILE) . '/includes/mooven-templates.p
 /**
  * Campos personalizados
  */
-//new Mooven_Receiver_Meta_Box;
-//new Mooven_Product_Meta_Box;
+new Mooven_Receiver_Meta_Box;
+new Mooven_Product_Meta_Box;
 
 
 /**
@@ -74,6 +74,6 @@ add_action('wp_ajax_pagarme_subscriber',  array($Subscription, 'pagarme_subscrib
 /**
  * Módulo - Split de pagamento
  */
-// $Split = new Mooven_Split;
+ $Split = new Mooven_Split;
 
-// add_filter('wc_pagarme_transaction_data', array($Split, 'pagarme_split'), 10, 2);
+add_filter('wc_pagarme_transaction_data', array($Split, 'pagarme_split'), 10, 2);
